@@ -1,5 +1,5 @@
 
-function [SystemData] = dataSaving_System(t_his, Q_his, F, u)
+function [SystemData] = dataSaving_System(t_his, Q_his)
 
 for i = 1:length(t_his)
 
@@ -7,7 +7,7 @@ for i = 1:length(t_his)
     Q = Q_his(:, i);
     
     % Tracking error
-    [~, SystemData_i] = systemDynamics(t_his(1, i), Q, F, u);
+    [~, SystemData_i] = systemDynamics(t_his(1, i), Q);
     e_his(1, i) = SystemData_i.err;
     x_his_TwoLink(1, i) = SystemData_i.x_TwoLink;
     x_his_OneLink(1, i) = SystemData_i.x_OneLink;

@@ -6,8 +6,8 @@ function [] = animateSystem(t_his, Q_his, SystemData)
 Q_his_OneLink = [Q_his(3, :); Q_his(6, :)];
 Q_his_TwoLink = [Q_his(1:2, :); Q_his(4:5, :)];
 
-SpeedRatio = 0.2; % vedio speed
-saveAnimation = 1;
+SpeedRatio = 1; % 0.2; % vedio speed
+saveAnimation = 0; % save animation
 s = get(0, 'ScreenSize');
 figure('Name', 'Two Link Simulation',...
     'outerposition', [s(3)*0.1 s(4)*0.1 s(3)*0.8 s(4)*0.8]);
